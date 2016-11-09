@@ -1,0 +1,49 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="white col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <h1> Basket </h1>
+        <h3 class="active2" style="text-align:right"> {{ numberOfItems }} ships</h3>
+        <div *ngIf="numberOfItems !== 0" >
+            <h3>Total Price :</h3>
+            <div class="clearfix"></div>
+            <h3 class="active2" style="text-align:right">{{ totalPrice |  currency:'USD':true:'1.0' }} </h3>
+            <button class="pull-right btn btn-success" (click)="checkOut(item)">Check Out</button>
+            <button class="pull-right btn btn-danger" (click)="emptyBasket()">Empty Basket</button>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+        <div class="white">
+            <img class="buttonImg" src="app/img/back-arrow.png" (click)="goBack()">
+        <div>
+        <div *ngIf="numberOfItems === 0">
+            <h1 class="white">Your basket is empty! Please support your local spaceship dealer and buy some ships!</h1>
+            <button class="btn btn-success" (click)="toStore()">Back To Store</button>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of items" (click)="onSelect(item)">
+                <div class="row">
+                <div class="col-md-6">
+                     <h3 class="active2">{{ item.qty }} x </h3> 
+                <img class="basketImg " src="{{ item.photo }}">
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <span class="badge">{{ item.price | currency:'USD':true:'1.0'}}</span>
+                    <span class="btn-xs btn btn-success" (click)="buy(item); $event.stopPropagation()">+</span>
+                    <span class="btn-xs btn btn-danger" (click)="delete(item); $event.stopPropagation()">x</span>
+                    <h4>{{ item.name }}</h4>
+                    <h3 class="active2">{{ item.totalPriceId | currency:'USD':true:'1.0'}} </h3>
+                    <h5> {{ item.views }} </h5>
+                </div>
+                </div>      
+            </li>
+        </ul> 
+    </div>
+    <div class="smallBasketDiv footer navbar-fixed-bottom">
+        <div class="white">
+            <p> <span class="active2">{{ numberOfItems }}</span> : Items  </p>
+            <p>Total Price : <span class="active2">{{ totalPrice | currency:'USD':true:'1.0'}}</span> </p>
+            <span><img class="listImg img-responsive textCenter" src="app/img/basket-open.png" (click)="goBack()" data-toggle="tooltip" title="Close Basket" ></span>
+        </div>
+    </div>
+</div>
+

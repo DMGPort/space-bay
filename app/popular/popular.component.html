@@ -1,0 +1,12 @@
+<ul class="list-group">
+      <li class="row list-group-item" *ngFor="let item of items" (click)="onSelect(item)">
+            <div class="col-md-12" data-toggle="tooltip" title="Click to View Detail">
+                        <span class="badge  pull-right">
+                             Viewed <h4>{{ item.views }}</h4> times 
+                        </span>
+                        <span class="listName"> {{ item.name }} </span>
+                        <img class="listImg " src="{{ item.photo }}">
+                  
+            </div>
+      </li>
+    </ul>

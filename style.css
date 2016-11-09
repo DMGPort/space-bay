@@ -1,0 +1,127 @@
+body * { 
+  font-family: 'Fjalla One', sans-serif;
+}
+body { 
+  min-width: 640px;
+}
+body {
+  background-color: #F5F5F5;
+  padding-bottom: 50px;
+}
+ #background_cover {
+   position: fixed;
+   background: no-repeat;
+   background-position: center;
+   z-index: -2;
+ }
+input { margin: 10px 0 10px 0;}
+textarea {
+  height: 180px;
+  width: 200px;
+}
+.btn {
+  margin: 10px 0 10px 0;
+}
+.active {
+  background-color:#FFA500;
+}
+.active2 {
+  color:#FFA500;
+}
+.navbar {
+  margin-bottom: 30px;
+}
+.badge {
+  background-color: #FFA500;
+}
+.viewButtons li{
+    list-style: none;
+    float: left;
+    margin: 0 10px 10px 0 ;
+}
+.buttonImg:hover {cursor: pointer;}
+.buttonImg {
+  height: 30px;
+  width: 30px;
+  margin: 0 0 2px 0;
+}
+.buttonImg:active {
+  height: 28px;
+  width: 28px;
+}
+.search-result:hover { 
+  font-weight:bold;
+  cursor: pointer;
+}
+.list-group-item:hover {
+  cursor: pointer;
+  border: solid 2px grey;
+}
+.listImg:hover {cursor: pointer;}
+.listImg {
+  width: auto;
+  height: 90px;
+}
+.listName {
+  margin-left: 30px;
+  font-size: 20px;
+}
+.gridImg{
+  
+  width: 80%;
+  height: auto;
+}
+.gridItem:hover {
+  cursor: pointer;
+  border: solid 2px grey;
+}
+.gridItem {
+      align-content: center;
+      height: 250px;
+}
+.detailImg {
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-left: thick double #D3D3D3;
+  max-height: 350px;
+}
+.detailImgSmall {
+  margin: 25px 5px 30px -10px;
+  transform: rotate(-17deg);
+  width: 90%;
+  height: auto;
+  max-height: 200;
+}
+.videoDiv {
+  padding: 25px;
+  margin-left: -90px;
+}
+.basketImg {
+  width: auto;
+  height: 140px;
+}
+.smallBasketDiv {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 15px;
+  width: 140px;
+  margin-left: 5%;
+  margin-right: auto;
+  margin-bottom: 40px;
+  border-radius: 25px;
+}
+@media(max-width: 780px)
+{
+    .smallBasketDiv{
+      width: 120px;
+      }
+}
+.white {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.99);
+    padding: 13px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+

@@ -1,0 +1,55 @@
+<div *ngIf="item">
+<div class="white col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <h2>{{item.name}}</h2>
+        
+        <label>name: </label>
+        <input [(ngModel)]="item.name"/>
+        <img class="detailImgSmall " src="{{ item.photo }}" alt="Item Picture">
+         <label>photo: </label>
+        <input [(ngModel)]="item.photo"/>
+        <div class="clear-fix"></div>
+        <span>Price: </span>
+        <span class="badge">{{ item.price }}</span>
+  
+        <div class="clear-fix"></div>
+        <label>price: </label>
+        <input type="number" [(ngModel)]="item.price"/>
+        <div class="clear-fix"></div>
+        <label>description: </label>
+        <div class="clear-fix"></div>
+        <textarea [(ngModel)]="item.description"></textarea>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        
+        <img class="buttonImg" src="app/img/save.png" (click)="preSave(item)" data-toggle="tooltip" title="Save Changes" data-toggle="modal" data-target="#myModal">
+        <!-- Modal -->
+        <div *ngIf="!isNumber" id="myModal" class="modal fade" role="dialog">
+            <div>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body" >
+                            <p>Please put in a <strong>Valid</strong> Item price</p>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+        </div>
+    </div>
+        <img *ngIf="!isNewestItem" class="buttonImg" src="app/img/cancel.ico" (click)="goBack(item)" data-toggle="tooltip" title="Cancel">
+        <div class="clear-fix"></div>
+        <label>Video Url: </label>
+        <input [(ngModel)]="item.videoUrl"/>
+        <label>blueprint: </label>
+        <input [(ngModel)]="item.blueprint"/>
+        <img class="detailImg hover img-responsive" src="{{ item.blueprint }}" alt="Detailed Item Picture"/>
+        <h3>Description:</h3>
+        <blockquote>{{ item.description }} </blockquote>
+    </div>
+</div>
+</div>

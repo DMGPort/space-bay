@@ -1,0 +1,13 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <span>
+    <img *ngIf="searchString == '' " style="margin-left:-33px" class="buttonImg" src="./app/img/search.png"/>
+    <img *ngIf="searchString != '' " style="margin-left:-33px" (click)="clearSearch(term)" class="buttonImg" src="./app/img/cancel2.png" data-toggle="tooltip" title="Clear Search"/>
+    
+    <input style="margin-top:-30px" #searchBox [(ngModel)]="searchString" id="search-box" placeholder="Search Store"  (keyup)="search(searchBox.value)" data-toggle="tooltip" title="Search Products"/>
+  </span>
+  <div *ngFor="let item of items | async">
+      <span (click)="gotoDetail(item)" class="search-result">{{item.name}}</span>
+  </div>
+
+  
+</div>

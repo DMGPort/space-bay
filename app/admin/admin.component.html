@@ -1,0 +1,27 @@
+
+
+<div>
+      <div class="container-fluid">
+            <div class="pull-right">
+                  <input placeholder="Name of New Item"  #itemName/>
+                  <a (click)="add(itemName.value); itemName.value=''"><button class="btn btn-success">Create New Item</button></a>
+                  <div class="clear-fix">
+                  </div>
+            </div>
+      </div>           
+      <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of items" (click)="onSelect(item)">
+                <div class="row" data-toggle="tooltip" title="Click to Edit">
+                        <div class="col-md-8">
+                              <img class="listImg " src="{{ item.photo }}">
+                              <span class="listName"> {{ item.name }} </span>
+
+                        </div>
+                       
+                        <div class="col-md-4">
+                                <span class="pull-right btn btn-warning" (click)="delete(item); $event.stopPropagation()">Delete</span>
+                        </div>
+                </div>
+            </li>
+      </ul>
+<div>

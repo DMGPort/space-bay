@@ -1,0 +1,64 @@
+<div id="background_cover"> <!-- Background -->
+  <img [src]="backgroundLink" />
+</div>
+<div id="video_cover_hue" style="{{hueColor}}">
+</div>
+<div class="container">
+    <div id="nav" class="col-md-12 col-sm-12 col-xs-12" >
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand active" data-toggle="tooltip" title="Selling Spacehips since the Great Depression!">the SpaceBay</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a routerLink="/list">Frontpage</a></li>
+                    <li><a routerLink="/about">About</a></li>
+                    <li><a style="cursor:pointer" data-toggle="modal" data-target="#myModal2">Administrator</a></li>
+                    <li style="margin-top:10px"><img (click)="backgroundToggle()" class="buttonImg" src="app/img/image.png" data-toggle="tooltip" title="Background"></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="leftSide" class="col-lg-2 col-md-2 col-sm-2 col-xs-2" >
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <item-search></item-search>
+            <ul class="viewButtons">
+                <li class="white"><a routerLink="/list" routerLinkActive="active"><img class="buttonImg" src="app/img/list.png" data-toggle="tooltip" title="List View"></a></li>
+                <li class="white"><a routerLink="/grid" routerLinkActive="active"><img class="buttonImg" src="app/img/grid.png" data-toggle="tooltip" title="Grid View"></a></li>
+                <li class="white"><a routerLink="/popular" routerLinkActive="active"><img class="buttonImg" src="app/img/view.png" data-toggle="tooltip" title="Most Viewed items"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main" class="col-md-9 col-sm-9 col-xs-9" >
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">  
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div id="rightSide" class="col-lg-1 col-md-1 col-sm-1 col-xs-1" >
+    </div>
+    <!--Log in MODAL  routerLink="/admin" -->
+    <div id="myModal2" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" >
+                    <p>Type in your <strong>password</strong> : <input placeholder="password" type="text" [(ngModel)]="password" /> </p>
+                    <div class="modal-footer">
+                        <button (click)="passwordCheck()" type="button" class="btn btn-default" data-dismiss="modal"  >Login</button>
+                    </div>
+                </div> 
+            </div>  
+        </div>
+    </div>
+</div>
+
+
+

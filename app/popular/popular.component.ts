@@ -24,11 +24,9 @@ export class PopularComponent implements OnInit{
 
     ngOnInit(): void {
         this.storeService.getItems()
-        .then(k => this.items = k)  
+        .then(k => this.items = k)
     }
-
-
-
+    
     onSelect(item: Item): void {
         this.selectedItem = item;
         item.views += 1;

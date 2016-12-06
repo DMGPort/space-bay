@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }   from '@angular/router';
+import { OrderByPipe } from '../store-service/order-by.pipe';
 
 import { StoreService } from '../store-service/store.service';
 import { BasketService } from '../store-service/basket.service';
@@ -9,7 +10,7 @@ import { Item }        from '../store-service/item';
 @Component({
     moduleId: module.id,
     selector: 'popular',
-    templateUrl: 'popular.component.html'
+    templateUrl: 'popular.component.html',
 })
 export class PopularComponent implements OnInit{ 
 

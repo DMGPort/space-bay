@@ -25,6 +25,7 @@ import { BasketComponent }        from './basket/basket.component';
 import { StoreService }           from './store-service/store.service';
 import { BasketService }           from './store-service/basket.service';
 import { StoreRoutingModule }     from './store-service/store-routing.module';
+import { OrderByPipe }              from './store-service/order-by.pipe';
 
 @NgModule({
   imports: [
@@ -50,6 +51,8 @@ import { StoreRoutingModule }     from './store-service/store-routing.module';
     PopularComponent,
 
     BasketComponent,
+
+    OrderByPipe
 
   ],
   providers: [ StoreService, BasketService ],
